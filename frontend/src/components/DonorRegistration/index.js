@@ -13,6 +13,7 @@ const options = [
 ];
 
 class DonorRegistration extends Component {
+  
   handleSubmit = (event) => {
     event.preventDefault();
     const data = {

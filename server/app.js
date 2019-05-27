@@ -10,7 +10,7 @@ var cookieSession = require('cookie-session')
 var index = require('./routes/index');
 var users = require('./routes/users');
 var cors = require('cors')
-var mysql      = require('mysql');
+var mysql = require('mysql');
 var app = express();
 app.set('trust proxy', 1) // trust first proxy
 app.use(cors())
@@ -33,9 +33,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req, res, next) {
   res.locals.connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    database : 'donorapp'
+    port: '8889',
+    host: 'localhost',
+    user: 'root1',
+    password: 'password',
+    database: 'socka'
   });
   res.locals.connection.connect();
   next();
